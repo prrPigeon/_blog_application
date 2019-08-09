@@ -1,0 +1,15 @@
+{% extends 'blog/main.html' %}
+	{% block body %}
+	<article class="media content-section">
+  		<div class="media-body">
+			<h2>You are logged out now!</h2>
+				<div class="border-top pt-3">
+					<small class="text-muted">
+						<a class="ml-2" href="{% url 'login_page' %}">&#9679; Log In
+					</a>
+					</small>
+			</div>
+		</div>
+	</article>
+
+{% endblock body %}

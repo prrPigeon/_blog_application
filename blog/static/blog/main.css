@@ -1,5 +1,5 @@
 body {
-  background: #5C6EFF;
+  background: #F0CC5C;
   color: #333333;
   margin-top: 5rem;
 }
@@ -81,4 +81,10 @@ a.article-title:hover {
 
 .account-heading {
   font-size: 2.5rem;
+}
+#update {
+  background: #FFA157;
+  font-stretch: italic;
+  margin-top: 20px;
+  text-align: center;
 }
