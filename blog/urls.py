@@ -15,6 +15,18 @@ urlpatterns = [
 	path('about/', views.about, name='about-blog'),
 	path('login/', authentification_views.LoginView.as_view(template_name='members/login.html'), name='login_page'),
 	path('logout/', authentification_views.LogoutView.as_view(template_name='members/logout.html'), name='logout_page'),
-	path('', include('members.urls')), 
+	path('password-reset',
+		 authentification_views.PasswordResetView.as_view(template_name='members/password_reset.html'), 
+		 name='password_reset'),
+	path('password-reset/done/',
+		 authentification_views.PasswordResetDoneView.as_view(template_name='members/password_reset_done.html'), 
+		 name='password_reset_done'),
+	path('password-reset-confirm/<uidb64>/<token>/',authentification_views.PasswordResetConfirmView.as_view(
+		template_name='members/password_reset_confirm.html'), name='password_reset_confirm'),
+
+	path('password-reset-complete/', authentification_views.PasswordResetCompleteView.as_view(
+		template_name='members/password_reset_complete.html'), name='password_reset_complete'),
+
+	path('', include('members.urls'))
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
